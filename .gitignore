@@ -1,0 +1,9 @@
+
+venv/
+samples/
+uploads/
+models/
+*.zip
+.vscode/
+downloads/*
+.idea/*
