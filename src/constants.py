@@ -1,3 +1,14 @@
-
 INCEPTION_V3_WEIGHTS = 'models/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5'
+BASE_DIR = 'datasets/cats_and_dogs_filtered'
 INPUT_SHAPE = 150
+BATCH_SIZE = 20
+ROTATION_RANE = 40
+WIDTH_SHIFT_RANGE = 0.2
+HEIGHT_SHIFT_RANGE = 0.2
+SHEAR_RANGE = 0.2
+ZOOM_RANGE = 0.2
+HORIZONTAL_FLIP = True
+LEARNING_RATE = 0.0001
+STEPS_PER_EPOCH = 100
+EPOCHS = 20
+VALIDATION_STEPS = 50

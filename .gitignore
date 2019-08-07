@@ -2,6 +2,7 @@ venv/
 samples/
 uploads/
 models/
+datasets/
 *.zip
 .vscode/
 downloads/*

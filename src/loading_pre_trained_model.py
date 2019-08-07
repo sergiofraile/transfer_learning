@@ -1,3 +1,5 @@
+import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"]="3" 
 import constants as ct
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 
