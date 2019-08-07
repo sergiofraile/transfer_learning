@@ -2,7 +2,7 @@
 
 echo "Initializasing pipe..."
 
-sh ./pre.sh
-python ./main.py
+sh src/pre.sh
+python src/main.py
 
 echo "Pipe process completed"

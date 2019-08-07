@@ -2,7 +2,7 @@ from subprocess import call
 
 print('Initializasing pipe...')
 
-call("./pre.sh", shell=True)
-call(["python", "main.py"])
+call("src/pre.sh", shell=True)
+call(["python", "src/main.py"])
 
 print('Pipe process completed')

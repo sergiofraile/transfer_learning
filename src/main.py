@@ -37,7 +37,13 @@ x = layers.Dense(1024, activation='relu')(x)
 # Add a dropout rate of 0.2
 x = layers.Dropout(0.2)(x)                  
 # Add a final sigmoid layer for classification
-x = layers.Dense  (1, activation='sigmoid')(x)           
+x = layers.Dense  (1, activation='sigmoid')(x)      
+
+class myCallback(tf.keras.callbacks.Callback):
+  def on_epoch_end(self, epoch, logs={}):
+    if(logs.get('acc')>0.999):
+      print("\nReached 99.9% accuracy so cancelling training!")
+      self.model.stop_training = True 
 
 model = Model( pre_trained_model.input, x) 
 
@@ -69,12 +75,14 @@ validation_generator =  test_datagen.flow_from_directory( validation_dir,
                                                           class_mode  = 'binary', 
                                                           target_size = (ct.INPUT_SHAPE, ct.INPUT_SHAPE))
 
+callbacks = myCallback()
 history = model.fit_generator(
   train_generator,
   validation_data = validation_generator,
   steps_per_epoch = ct.STEPS_PER_EPOCH,
   epochs = ct.EPOCHS,
   validation_steps = ct.VALIDATION_STEPS,
-  verbose = 2)                                                        
+  verbose = 2,
+  callbacks=[callbacks])                                                        
 
 pt.plotHistory(history)
