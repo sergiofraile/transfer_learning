@@ -7,3 +7,4 @@ datasets/
 .vscode/
 downloads/*
 .idea/*
+src/__pycache__/
